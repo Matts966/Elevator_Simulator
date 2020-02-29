@@ -9,8 +9,8 @@ current_position=random.randint(-2, 3)
 
 @app.route('/')
 def current_place():
-    position = random.randint(-2, 3)
-    return  jsonify({"current place": str(position)}), 200
+    global current_position
+    return  jsonify({"current position": current_position}), 200
 
 def MoveOD(current_position, destination):
     if current_position==destination:
